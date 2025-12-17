@@ -75,10 +75,20 @@
             tapping-term-ms = <500>;
         };
 
-        ms_scrl: mouse_scroll {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
+        ms_scrl_v: ms_scrl_v {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "MS_SCRL_V";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
+            tap-ms = <20>;
+        };
+
+        ms_scrl_h: ms_scrl_h {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "MS_SCRL_H";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
 
             tap-ms = <20>;
         };
@@ -128,9 +138,7 @@
                       &trans     &trans    &trans    &trans     &trans    &trans  &trans     &kp DELETE  &kp RALT   &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&ms_scrl SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>, <&ms_scrl_v>;
         };
 
         raise_layer {
@@ -190,9 +198,7 @@
                       &trans     &trans    &trans    &trans     &trans    &trans  &trans     &trans    &trans     &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&ms_scrl SCRL_RIGHT SCRL_LEFT>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>, <&ms_scrl_h>;
         };
 
         RAISE_LAYER_ALT {
