@@ -75,7 +75,7 @@
             tapping-term-ms = <500>;
         };
 
-        mouse_scroll: mouse_scroll {
+        ms_scrl: mouse_scroll {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
@@ -130,7 +130,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&mouse_scroll SCRL_UP SCRL_DOWN>;
+                <&ms_scrl SCRL_UP SCRL_DOWN>;
         };
 
         raise_layer {
@@ -192,7 +192,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&mouse_scroll SCRL_RIGHT SCRL_LEFT>;
+                <&ms_scrl SCRL_RIGHT SCRL_LEFT>;
         };
 
         RAISE_LAYER_ALT {
