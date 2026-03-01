@@ -10,7 +10,7 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &josefadamcik_sofle_layout;
-		zephyr,display = &nice_view;
+		//zephyr,display = &nice_view;
     };
 
     mock_kscan: mock_kscan_0 {
