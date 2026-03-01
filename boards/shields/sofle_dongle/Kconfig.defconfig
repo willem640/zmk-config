@@ -10,6 +10,9 @@ config ZMK_SPLIT_ROLE_CENTRAL
 config ZMK_SPLIT
     default y
 
+config ZMK_DISPLAY
+	default n
+
 # Set this to the number of peripherals your dongle will have.
 # For a unibody, this would be 1. If you have left and right halves, set it to 2, etc.
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
@@ -22,5 +25,12 @@ config BT_MAX_CONN
 # Set this to the same number as BT_MAX_CONN
 config BT_MAX_PAIRED
     default 5
+
+endif
+
+if SHIELD_SOFLE_LEFT_PERIPHERAL
+
+config ZMK_DISPLAY
+	default y
 
 endif
