@@ -33,9 +33,8 @@ if SHIELD_SOFLE_LEFT_PERIPHERAL
 config ZMK_DISPLAY
 	default y
 
-
 config ZMK_SPLIT_ROLE_CENTRAL
-    default y
+    default n
 
 config ZMK_SPLIT
     default y
