@@ -19,7 +19,7 @@
 
 / {
     chosen {
-        zephyr,display = &nice_view;
+        //zephyr,display = &nice_view;
         zmk,kscan = &kscan0;
     };
 
@@ -101,17 +101,20 @@ nice_view_spi: &spi0 {
 };
 
 &nice_view_spi {
-    status = "okay";
-    nice_view: ls0xx@0 {
-        compatible = "sharp,ls0xx";
-        spi-max-frequency = <1000000>;
-        reg = <0>;
-        width = <160>;
-        height = <68>;
-    };
     cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
-};
-
+}
+//&nice_view_spi {
+//    status = "okay";
+//    nice_view: ls0xx@0 {
+//        compatible = "sharp,ls0xx";
+//        spi-max-frequency = <1000000>;
+//        reg = <0>;
+//        width = <160>;
+//        height = <68>;
+//    };
+//    cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
+//};
+//
 &kscan0 {
     col-gpios
         = <&pro_micro 19 GPIO_ACTIVE_HIGH>
