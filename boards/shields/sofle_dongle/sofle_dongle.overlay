@@ -10,7 +10,7 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &josefadamcik_sofle_layout;
-		//zephyr,display = &nice_view;
+		zephyr,display = &nice_view;
     };
 
     mock_kscan: mock_kscan_0 {
@@ -59,21 +59,21 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
     };
 };
 
-//nice_view_spi: &spi0 {
-//    compatible = "nordic,nrf-spim";
-//    pinctrl-0 = <&spi0_default>;
-//    pinctrl-1 = <&spi0_sleep>;
-//    pinctrl-names = "default", "sleep";
-//    cs-gpios = <&xiao_d 6 GPIO_ACTIVE_HIGH>;  // Pin D6 as CS
-//	nice_view: ls0xx@0 {
-//        compatible = "sharp,ls0xx";
-//        spi-max-frequency = <1000000>;
-//        reg = <0>;
-//        width = <160>;
-//        height = <68>;
-//    };
-//};
-//
-//&xiao_i2c {
-//    status = "disabled";
-//};
+nice_view_spi: &spi0 {
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&xiao_d 6 GPIO_ACTIVE_HIGH>;  // Pin D6 as CS
+	nice_view: ls0xx@0 {
+        compatible = "sharp,ls0xx";
+        spi-max-frequency = <1000000>;
+        reg = <0>;
+        width = <160>;
+        height = <68>;
+    };
+};
+
+&xiao_i2c {
+    status = "disabled";
+};
