@@ -102,7 +102,7 @@ nice_view_spi: &spi0 {
 
 &nice_view_spi {
     cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
-}
+};
 //&nice_view_spi {
 //    status = "okay";
 //    nice_view: ls0xx@0 {
